@@ -146,11 +146,11 @@ Point *find_left_line(int (*img)[IMG_RIGHT], Point left_start_point) {
         }
 
         if (is_road(img, next_point) && !contain_point(line, line_length, next_point)) {
-            // 符合记录条件
+            // meets recording conditions
             current_point = next_point;
             line[line_length++] = current_point;
         } else if (is_wall(img, next_point)) {
-            // 前进方向被挡住
+            // forward direction is blocked
             switch (current_direction) {
                 case UP:
                     current_direction = RIGHT;
@@ -166,8 +166,7 @@ Point *find_left_line(int (*img)[IMG_RIGHT], Point left_start_point) {
                     break;
             }
         } else if (is_road(img, next_point) && contain_point(line, line_length, next_point)) {
-            // 前进方向是路，但是已经走过了
-            // 回退一步
+            // The forward direction is a road, but it has already been traveled
             current_point = next_point;
         }
     }
@@ -216,11 +215,11 @@ Point* find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point) 
         }
 
         if (is_road(img, next_point) && !contain_point(line, line_length, next_point)) {
-            // 符合记录条件
+            // meets recording conditions
             current_point = next_point;
             line[line_length++] = current_point;
         } else if (is_wall(img, next_point)) {
-            // 前进方向被挡住
+            // forward direction is blocked
             switch (current_direction) {
                 case UP:
                     current_direction = LEFT;
@@ -236,8 +235,7 @@ Point* find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point) 
                     break;
             }
         } else if (is_road(img, next_point) && contain_point(line, line_length, next_point)) {
-            // 前进方向是路，但是已经走过了
-            // 回退一步
+            // The forward direction is a road, but it has already been traveled
             current_point = next_point;
         }
     }
