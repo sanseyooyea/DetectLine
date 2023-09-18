@@ -22,8 +22,14 @@
 int stop = 0;
 
 typedef struct {
-    int r;
-    int c;
+    /**
+     * 行
+     */
+    int row;
+    /**
+     * 列
+     */
+    int column;
 } Point;
 
 /**
@@ -33,7 +39,7 @@ typedef struct {
  * @return 如果是墙，返回TRUE，否则返回FALSE
  */
 boolean is_wall(int (*img)[IMG_RIGHT], Point p) {
-    return img[p.r][p.c] == WALL;
+    return img[p.row][p.column] == WALL;
 }
 
 /**
@@ -43,7 +49,7 @@ boolean is_wall(int (*img)[IMG_RIGHT], Point p) {
  * @return 如果是路，返回TRUE，否则返回FALSE
  */
 boolean is_road(int (*img)[IMG_RIGHT], Point p) {
-    return img[p.r][p.c] == ROAD;
+    return img[p.row][p.column] == ROAD;
 }
 
 /**
@@ -97,7 +103,7 @@ Point find_right_start_point(int (*img)[IMG_RIGHT]) {
  */
 boolean contain_point(Point *line, int line_length, Point p) {
     for (int i = 0; i < line_length; i++) {
-        if (line[i].r == p.r && line[i].c == p.c) {
+        if (line[i].row == p.row && line[i].column == p.column) {
             return TRUE;
         }
     }
@@ -127,21 +133,21 @@ Point *find_left_line(int (*img)[IMG_RIGHT], Point left_start_point) {
     line[line_length++] = current_point;
 
     // check line is closed
-    while (current_point.r != 0 && current_point.r != IMG_RIGHT - 1
-    && current_point.c != 0 && current_point.c != IMG_BOTTOM - 1) {
+    while (current_point.row != 0 && current_point.row != IMG_RIGHT - 1
+           && current_point.column != 0 && current_point.column != IMG_BOTTOM - 1) {
         Point next_point = current_point;
         switch (current_direction) {
             case UP:
-                next_point.r--;
+                next_point.row--;
                 break;
             case LEFT:
-                next_point.c--;
+                next_point.column--;
                 break;
             case DOWN:
-                next_point.r++;
+                next_point.row++;
                 break;
             case RIGHT:
-                next_point.c++;
+                next_point.column++;
                 break;
         }
 
@@ -196,21 +202,21 @@ Point* find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point) 
     line[line_length++] = current_point;
 
     // check line is closed
-    while (current_point.r != 0 && current_point.r != IMG_RIGHT - 1
-           && current_point.c != 0 && current_point.c != IMG_BOTTOM - 1) {
+    while (current_point.row != 0 && current_point.row != IMG_RIGHT - 1
+           && current_point.column != 0 && current_point.column != IMG_BOTTOM - 1) {
         Point next_point = current_point;
         switch (current_direction) {
             case UP:
-                next_point.r--;
+                next_point.row--;
                 break;
             case LEFT:
-                next_point.c--;
+                next_point.column--;
                 break;
             case DOWN:
-                next_point.r++;
+                next_point.row++;
                 break;
             case RIGHT:
-                next_point.c++;
+                next_point.column++;
                 break;
         }
 
@@ -259,12 +265,12 @@ int main() {
     Point left_start_point_1 = find_left_start_point(Image1);
     Point right_start_point_1 = find_right_start_point(Image1);
 
-    printf("左侧起始点为[%d, %d]\n", left_start_point_1.r, left_start_point_1.c);
-    printf("右侧起始点为[%d, %d]\n", right_start_point_1.r, right_start_point_1.c);
+    printf("左侧起始点为[%d, %d]\n", left_start_point_1.row, left_start_point_1.column);
+    printf("右侧起始点为[%d, %d]\n", right_start_point_1.row, right_start_point_1.column);
 
     Point *left_line_1 = find_left_line(Image1, left_start_point_1);
     int left_line_length_1 = 0;
-    while (left_line_1->r != -1 && left_line_1->c != -1) {
+    while (left_line_1->row != -1 && left_line_1->column != -1) {
         left_line_1++;
         left_line_length_1++;
     }
@@ -272,7 +278,7 @@ int main() {
 
     Point *right_line_1 = find_right_line(Image1, right_start_point_1);
     int right_line_length_1 = 0;
-    while (right_line_1->r != -1 && right_line_1->c != -1) {
+    while (right_line_1->row != -1 && right_line_1->column != -1) {
         right_line_1++;
         right_line_length_1++;
     }
