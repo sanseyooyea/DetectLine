@@ -32,7 +32,7 @@ typedef struct {
  * @param p 点
  * @return 如果是墙，返回TRUE，否则返回FALSE
  */
-boolean is_wall(int img[IMG_BOTTOM][IMG_RIGHT], Point p) {
+boolean is_wall(int (*img)[IMG_RIGHT], Point p) {
     return img[p.r][p.c] == WALL;
 }
 
@@ -42,7 +42,7 @@ boolean is_wall(int img[IMG_BOTTOM][IMG_RIGHT], Point p) {
  * @param p 点
  * @return 如果是路，返回TRUE，否则返回FALSE
  */
-boolean is_road(int img[IMG_BOTTOM][IMG_RIGHT], Point p) {
+boolean is_road(int (*img)[IMG_RIGHT], Point p) {
     return img[p.r][p.c] == ROAD;
 }
 
@@ -52,7 +52,7 @@ boolean is_road(int img[IMG_BOTTOM][IMG_RIGHT], Point p) {
  * @return 左边界起始点
  *         如果没有找到，返回{-1, -1}
  */
-Point find_left_start_point(int img[IMG_BOTTOM][IMG_RIGHT]) {
+Point find_left_start_point(int (*img)[IMG_RIGHT]) {
     Point notfound = {-1, -1};
 
     int center = IMG_RIGHT / 2;
@@ -73,7 +73,7 @@ Point find_left_start_point(int img[IMG_BOTTOM][IMG_RIGHT]) {
  * @return 右边界起始点
  *        如果没有找到，返回{-1, -1}
  */
-Point find_right_start_point(int img[IMG_BOTTOM][IMG_RIGHT]) {
+Point find_right_start_point(int (*img)[IMG_RIGHT]) {
     Point notfound = {-1, -1};
 
     int center = IMG_RIGHT / 2;
@@ -110,7 +110,7 @@ boolean contain_point(Point *line, int line_length, Point p) {
  * @param left_start_point 左边线起始点
  * @return 左边线
  */
-Point *find_left_line(int img[IMG_BOTTOM][IMG_RIGHT], Point left_start_point) {
+Point *find_left_line(int (*img)[IMG_RIGHT], Point left_start_point) {
     // initialize
     Point line[MAX_LINE_SIZE];
     for (int i = 0; i < MAX_LINE_SIZE; i++) {
@@ -248,7 +248,7 @@ Point* find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point) 
  * 打印图像
  * @param img 二值化图像
  */
-void print_image(int img[IMG_BOTTOM][IMG_RIGHT]) {
+void print_image(int (*img)[IMG_RIGHT]) {
     for (int r = 0; r < IMG_BOTTOM; r++) {
         for (int c = 0; c < IMG_RIGHT; c++) {
             printf("%d", img[r][c]);
