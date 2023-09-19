@@ -43,12 +43,10 @@ int main() {
     // 4. print result
     for (int i = 0; i < left_line_length_1; i++) {
         result[left_line_1[i].row][left_line_1[i].column] = 1;
-        printf("left_line_1[%d] = [%d, %d]\n", i, left_line_1[i].row, left_line_1[i].column);
     }
 
     for (int i = 0; i < right_line_length_1; ++i) {
         result[right_line_1[i].row][right_line_1[i].column] = 1;
-        printf("right_line_1[%d] = [%d, %d]\n", i, right_line_1[i].row, right_line_1[i].column);
     }
 
     while (middle_line_1->row != -1 && middle_line_1->column != -1) {

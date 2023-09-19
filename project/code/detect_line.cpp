@@ -1,9 +1,9 @@
-////
-//// Created by SanseYooyea on 2023/9/19.
-////
 //
-//#include "detect_line.h"
+// Created by SanseYooyea on 2023/9/19.
 //
+
+#include "detect_line.h"
+
 //boolean is_wall(int (*img)[IMG_RIGHT], Point p) {
 //    return img[p.row][p.column] == WALL;
 //}
