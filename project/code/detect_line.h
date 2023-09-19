@@ -116,7 +116,8 @@ Point *find_left_line(int (*img)[IMG_RIGHT], Point left_start_point, int *num) {
         // if not, break, maybe end of the line or img is wrong
         // TODO need to check, if the img is wrong
         if (is_wall(img, right_point)) {
-            continue;
+            printf("error: right point [%d, %d] = %d is accessible\n", right_point.row, right_point.column, img[right_point.row][right_point.column]);
+            break;
         }
 
         if (is_wall(img, front_point)) {
@@ -181,7 +182,7 @@ Point *find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point, 
 
         // get front point, right point and right front point
         // ○ ○
-        // ● ○
+        // ○ ●
         Point front_point = get_front_point(current_point, current_direction);
         Point left_point = get_left_point(current_point, current_direction);
         Point left_front_point = get_left_front_point(current_point, current_direction);
@@ -190,7 +191,8 @@ Point *find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point, 
         // if not, break, maybe end of the line or img is wrong
         // TODO need to check, if the img is wrong
         if (is_wall(img, left_point)) {
-            continue;
+            printf("error: left point [%d, %d] = %d is accessible\n", left_point.row, left_point.column, img[left_point.row][left_point.column]);
+            break;
         }
 
         if (is_wall(img, front_point)) {
@@ -214,6 +216,7 @@ Point *find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point, 
             if (!contain_point(line, step, front_point)) {
                 // meets recording conditions
                 line[step++] = current_point;
+                printf("right line[%d]: %d, %d\n", step, current_point.row, current_point.column);
                 turn = 0;
             }
             continue;
