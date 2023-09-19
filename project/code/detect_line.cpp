@@ -42,7 +42,7 @@ Point find_right_start_point(int (*img)[IMG_RIGHT]) {
     return notfound;
 }
 
-Point find_front_point(Point current_point, Direction current_direction) {
+Point get_front_point(Point current_point, Direction current_direction) {
     Point front_point = current_point;
     switch (current_direction) {
         case UP:

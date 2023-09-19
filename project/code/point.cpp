@@ -56,7 +56,7 @@ Point find_left_front_point(Point current_point, Direction current_direction) {
     return left_front_point;
 }
 
-Point find_right_point(Point current_point, Direction current_direction) {
+Point get_right_point(Point current_point, Direction current_direction) {
     Point right_point = current_point;
     switch (current_direction) {
         case UP:
@@ -75,7 +75,7 @@ Point find_right_point(Point current_point, Direction current_direction) {
     return right_point;
 }
 
-Point find_right_front_point(Point current_point, Direction current_direction) {
+Point get_right_front_point(Point current_point, Direction current_direction) {
     Point right_front_point = current_point;
     switch (current_direction) {
         case UP:
@@ -96,4 +96,8 @@ Point find_right_front_point(Point current_point, Direction current_direction) {
             break;
     }
     return right_front_point;
+}
+
+Point find_middle_point(Point left, Point right) {
+    return (Point) {(left.row + right.row) / 2, (left.column + right.column) / 2};
 }

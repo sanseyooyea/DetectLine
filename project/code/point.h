@@ -50,7 +50,7 @@ Point find_left_front_point(Point current_point, Direction current_direction);
  * @param current_direction
  * @return
  */
-Point find_right_point(Point current_point, Direction current_direction);
+Point get_right_point(Point current_point, Direction current_direction);
 
 /**
  * 寻找当前点的右前方点
@@ -58,6 +58,14 @@ Point find_right_point(Point current_point, Direction current_direction);
  * @param current_direction 当前方向
  * @return 右前方点
  */
-Point find_right_front_point(Point current_point, Direction current_direction);
+Point get_right_front_point(Point current_point, Direction current_direction);
+
+/**
+ * 寻找中点
+ * @param left 左侧点
+ * @param right 右侧点
+ * @return 中点
+ */
+Point find_middle_point(Point left, Point right);
 
 #endif //DETECTLINE_POINT_H

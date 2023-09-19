@@ -55,7 +55,7 @@ Point find_right_start_point(int (*img)[IMG_RIGHT]);
  * @param current_direction 当前方向
  * @return 下一个点
  */
-Point find_front_point(Point current_point, Direction current_direction);
+Point get_front_point(Point current_point, Direction current_direction);
 
 /**
  * 寻找左边线
@@ -82,9 +82,9 @@ Point *find_left_line(int (*img)[IMG_RIGHT], Point left_start_point, int *num) {
            && current_point.column != 0 && current_point.column != IMG_BOTTOM - 1) {
 
         // get left point and left front point
-        Point front_point = find_front_point(current_point, current_direction);
-        Point right_point = find_right_point(current_point, current_direction);
-        Point right_front_point = find_right_front_point(current_point, current_direction);
+        Point front_point = get_front_point(current_point, current_direction);
+        Point right_point = get_right_point(current_point, current_direction);
+        Point right_front_point = get_right_front_point(current_point, current_direction);
 
         // make sure right point is not accessible
         // if not, break, maybe end of the line or img is wrong
@@ -213,16 +213,6 @@ Point find_point_in_same_height(Point *line, int line_length, Point p) {
         }
     }
     return (Point) {p.row, IMG_RIGHT};
-}
-
-/**
- * 寻找中点
- * @param left 左侧点
- * @param right 右侧点
- * @return 中点
- */
-Point find_middle_point(Point left, Point right) {
-    return (Point) {(left.row + right.row) / 2, (left.column + right.column) / 2};
 }
 
 /**
