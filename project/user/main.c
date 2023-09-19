@@ -1,5 +1,5 @@
 #include "../code/camera.h"
-#include "../code/detect_line.cpp"
+#include "../code/detect_line.h"
 
 /**
  * 打印图像
