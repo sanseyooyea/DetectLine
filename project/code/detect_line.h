@@ -213,7 +213,6 @@ Point *find_right_line(int img[IMG_BOTTOM][IMG_RIGHT], Point right_start_point, 
             if (!contain_point(line, step, front_point)) {
                 // meets recording conditions
                 line[step++] = current_point;
-                printf("right line[%d]: %d, %d\n", step, current_point.row, current_point.column);
                 turn = 0;
             }
             continue;
