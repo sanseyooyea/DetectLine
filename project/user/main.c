@@ -16,19 +16,19 @@ void print_image(int (*img)[IMG_RIGHT]) {
 
 int main() {
     // 1. find left and right start point
-    Point left_start_point_1 = find_left_start_point(Image1);
-    Point right_start_point_1 = find_right_start_point(Image1);
+    Point left_start_point_1 = find_left_start_point(VIDEO1_120_60_458);
+    Point right_start_point_1 = find_right_start_point(VIDEO1_120_60_458);
 
     printf("左侧起始点为[%d, %d]\n", left_start_point_1.row, left_start_point_1.column);
     printf("右侧起始点为[%d, %d]\n", right_start_point_1.row, right_start_point_1.column);
 
     // 2. find left and right line
     int left_line_length_1 = 0;
-    Point *left_line_1 = find_left_line(Image1, left_start_point_1, &left_line_length_1);
+    Point *left_line_1 = find_left_line(VIDEO1_120_60_458, left_start_point_1, &left_line_length_1);
     printf("左边线点的个数为%d\n", left_line_length_1 + 1);
 
     int right_line_length_1 = 0;
-    Point *right_line_1 = find_right_line(Image1, right_start_point_1, &right_line_length_1);
+    Point *right_line_1 = find_right_line(VIDEO1_120_60_458, right_start_point_1, &right_line_length_1);
     printf("右边线点的个数为%d\n", right_line_length_1);
 
     // 3. find middle line

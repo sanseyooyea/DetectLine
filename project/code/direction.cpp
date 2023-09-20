@@ -1,7 +1,3 @@
-////
-//// Created by SanseYooyea on 2023/9/19.
-////
-//
 //#include "direction.h"
 //
 //Direction change_direction(Direction current_direction, Direction left_or_right) {

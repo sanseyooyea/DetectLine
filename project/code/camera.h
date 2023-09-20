@@ -1,7 +1,3 @@
-//
-// Created by SanseYooyea on 2023/9/18.
-//
-
 #include "stdio.h"
 
 int Image1[60][120] = {

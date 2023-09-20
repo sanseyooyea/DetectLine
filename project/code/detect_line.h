@@ -1,6 +1,3 @@
-//
-// Created by SanseYooyea on 2023/9/19.
-//
 #ifndef DETECTLINE_DETECT_LINE_H
 #define DETECTLINE_DETECT_LINE_H
 
