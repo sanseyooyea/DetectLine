@@ -1,3 +1,0 @@
-D:/DetectLine/cmake-build-debug/CMakeFiles/DetectLine.dir
-D:/DetectLine/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/DetectLine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
