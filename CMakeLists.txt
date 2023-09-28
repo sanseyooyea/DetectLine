@@ -6,6 +6,7 @@ set(CMAKE_C_STANDARD 23)
 include_directories(project/code)
 include_directories(project/user)
 
+LINK_LIBRARIES(m)
 add_executable(DetectLine
         project/user/main.c
         project/code/camera.h
