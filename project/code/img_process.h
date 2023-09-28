@@ -1,7 +1,3 @@
-//
-// Created by SanseYooyea on 2023/9/28.
-//
-
 #ifndef DETECTLINE_IMG_PROCESS_H
 #define DETECTLINE_IMG_PROCESS_H
 

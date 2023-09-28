@@ -1,7 +1,3 @@
-//
-// Created by SanseYooyea on 2023/9/28.
-//
-
 #ifndef DETECTLINE_UTILS_H
 #define DETECTLINE_UTILS_H
 
