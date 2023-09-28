@@ -6,6 +6,7 @@
 #define DETECTLINE_IMG_PROCESS_H
 
 #include <stdint.h>
+#include "utils.h"
 
 typedef struct image {
     uint8_t *data;
