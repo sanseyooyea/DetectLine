@@ -17,4 +17,7 @@ add_executable(DetectLine
         project/code/point.h
         project/code/direction.c
         project/code/direction.h
+        project/code/img_process.h
+        project/code/img_process.c
+        project/code/utils.h
 )

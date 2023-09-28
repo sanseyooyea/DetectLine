@@ -5,4 +5,7 @@
 #define FALSE 0
 #define boolean int
 
+#ifndef PI
+#define PI               3.14159265358979f
+
 #endif //DETECTLINE_COMMON_DATA_H
