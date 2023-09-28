@@ -7,5 +7,6 @@
 
 #ifndef PI
 #define PI               3.14159265358979f
+#endif // PI
 
 #endif //DETECTLINE_COMMON_DATA_H
